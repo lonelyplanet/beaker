@@ -1,5 +1,4 @@
-- content_for(:stylesheets) { stylesheet_link_tag( "<%= file_name %>/<%= file_name %>" ) }
+- content_for(:async_js) {'<%= file_name %>/<%= file_name %>'}
+- content_for(:stylesheets) do
+  = smart_stylesheet('<%= file_name %>/<%= file_name %>')
 - content_for(:meta) { render "shared/meta", @meta }
-
-%div.row__inner.row__inner--content.copy--freight
-  %h1 <%= file_name %>
