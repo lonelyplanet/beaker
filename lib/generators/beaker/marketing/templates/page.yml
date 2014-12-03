@@ -1,0 +1,69 @@
+analytics_config:
+  pageName: "marketing pages : <%= file_name.gsub("_","-") %>"
+  channel: "marketing pages"
+  prop1: "marketing pages"
+  prop2: "<%= file_name.gsub("_","-") %>"
+  prop7: "marketing pages : <%= file_name.gsub("_","-") %>"
+  prop8: "marketing pages : <%= file_name.gsub("_","-") %>"
+  prop43: "<%= file_name.gsub("_"," ").capitalize %>"
+  eVar2: "marketing pages"
+  eVar11: "<%= file_name.gsub("_"," ").capitalize %>"
+  eVar12: "marketing pages : <%= file_name.gsub("_","-") %>"
+  eVar13: "marketing pages : <%= file_name.gsub("_","-") %>"
+  eVar47: "<%= file_name.gsub("_"," ").capitalize %>"
+
+meta:
+  title: "<%= file_name.gsub("_"," ").capitalize %>"
+  description: "{{TODO - add description}}"
+
+hidden_config_tags:
+  -
+    name: "config[list_name]"
+    value: "{{TODO - add list name}}"
+  -
+    name: "config[email_template]"
+    value: "{{TODO - add email template}}"
+  -
+    name: "config[source]"
+    value: "{{TODO - source}}"
+  -
+    name: "config[terms_name]"
+    value: "{{TODO - terms name}}"
+  -
+    name: "config[active_subscribers_list]"
+    value: "Active Subscribers"
+  -
+    name: "config[lp_editorial_newsletter]"
+    value: "LP_Editorial_Newsletter"
+
+
+optin:
+  id: "js-optin"
+  name: "sailthru[opt_in]"
+  checked: true
+  label: "{{TODO - text for opt in checkbox}}"
+
+first_name:
+  name: "sailthru[required][first_name]"
+  maxlength: 200
+  placeholder: "Your first name"
+
+last_name:
+  name: "sailthru[required][surname]"
+  maxlength: 200
+  placeholder: "Your last name"
+
+email:
+  name: "sailthru[required][email]"
+  maxlength: 200
+  placeholder: "Your email address"
+
+countries:
+  name: "sailthru[required][country]"
+  placeholder: "Country"
+
+terms:
+  id: "js-terms"
+  name: "sailthru[required][checkbox][terms]"
+  checked: true
+  label: "{{TODO - Agree to Lonely Planet Terms & Conditions}}"
