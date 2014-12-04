@@ -17,3 +17,4 @@ Creates
 * `app/assets/stylesheets/NAME/_NAME_modern.sass`
 * `app/assets/stylesheets/NAME/NAME.css.sass`
 * `app/assets/stylesheets/NAME/NAME_ie.css.sass`
+* `app/assets/data/NAME.yml`

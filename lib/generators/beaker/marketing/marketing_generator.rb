@@ -8,9 +8,13 @@ module Beaker
       class_option :include_js, :type => :boolean, :default => true, :desc => "Generate a JS file"
       class_option :include_styles, :type => :boolean, :default => true, :desc => "Generate the styles"
       class_option :view_directory, :type => :string, :default => "gonzo", :desc => "The view output folder"
-     
+
       def copy_initializer_file
         template "page.html.haml", "app/views/#{options[:view_directory]}/#{file_name}.html.haml"
+      end
+
+      def create_yml
+        template "page.yml", "app/data/#{file_name}.yml"
       end
 
       def create_javascript
