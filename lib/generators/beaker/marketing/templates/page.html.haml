@@ -1,6 +1,7 @@
 - content_for(:async_js) {'<%= file_name %>/<%= file_name %>'}
 - content_for(:stylesheets) do
-  = smart_stylesheet('<%= file_name %>/<%= file_name %>')
+  = stylesheet_link_tag '<%= file_name %>/<%= file_name %>' , :media => "all"
+
 - content_for(:meta) { render "shared/meta", @meta }
 
 - content_for(:scripts) do
