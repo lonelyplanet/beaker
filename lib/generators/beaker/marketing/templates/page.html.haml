@@ -1,6 +1,7 @@
 - content_for(:async_js) {'<%= file_name %>/<%= file_name %>'}
 - content_for(:stylesheets) do
   = stylesheet_link_tag '<%= file_name %>/<%= file_name %>' , :media => "all"
+  = stylesheet_link_tag 'validation/validation' , :media => "all"
 
 - content_for(:meta) { render "shared/meta", @meta }
 
@@ -11,14 +12,14 @@
   - @hidden_config_tags.each do |tag|
     = hidden_field_tag tag[:name], tag[:value]
 
-  .input-txt.col-1
-    = ui_component('forms/text_input', properties: @first_name)
-  .input-txt.col-2
-    = ui_component('forms/text_input', properties: @last_name)
+  .input-txt.text-form.col-1
+    = ui_component('forms/text_field', properties: @first_name)
+  .input-txt.text-form.col-2
+    = ui_component('forms/text_field', properties: @last_name)
   .input-txt.col-1
     = ui_component('forms/dropdown', properties: @countries.merge({options: @gonzo.regions}))
-  .input-txt.col-2
-    = ui_component('forms/text_input', properties: @email)
+  .input-txt.text-form.col-2
+    = ui_component('forms/text_field', properties: @email)
 
   = ui_component('forms/checkbox_field', properties: @optin)
   = ui_component('forms/checkbox_field', properties: @terms)

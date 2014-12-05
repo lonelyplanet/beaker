@@ -47,20 +47,26 @@ first_name:
   name: "sailthru[required][first_name]"
   maxlength: 200
   placeholder: "Your first name"
+  required: true
 
 last_name:
   name: "sailthru[required][surname]"
   maxlength: 200
   placeholder: "Your last name"
+  required: true
 
 email:
   name: "sailthru[required][email]"
   maxlength: 200
   placeholder: "Your email address"
+  required: true
+  type: "email"
 
 countries:
   name: "sailthru[required][country]"
   placeholder: "Country"
+  class: "country"
+  required: true
 
 terms:
   id: "js-terms"

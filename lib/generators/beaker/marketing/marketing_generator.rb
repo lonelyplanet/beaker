@@ -18,7 +18,7 @@ module Beaker
       end
 
       def create_javascript
-        create_file "app/assets/javascripts/#{file_name}/#{file_name}.js" if options[:include_js]
+        template "page.js", "app/assets/javascripts/#{file_name}/#{file_name}.js" if options[:include_js]
       end
 
       def create_stylesheets
