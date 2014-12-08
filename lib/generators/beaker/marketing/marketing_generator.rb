@@ -18,16 +18,12 @@ module Beaker
       end
 
       def create_javascript
-        create_file "app/assets/javascripts/#{file_name}/#{file_name}.js" if options[:include_js]
+        template "page.js", "app/assets/javascripts/#{file_name}/#{file_name}.js" if options[:include_js]
       end
 
       def create_stylesheets
         if options[:include_styles]
-          template "_main_common.sass", "app/assets/stylesheets/#{file_name}/_#{file_name}_common.sass"
-          template "_main_ie.sass", "app/assets/stylesheets/#{file_name}/_#{file_name}_ie.sass"
-          template "_main_modern.sass", "app/assets/stylesheets/#{file_name}/_#{file_name}_modern.sass"
           template "main.css.sass", "app/assets/stylesheets/#{file_name}/#{file_name}.css.sass"
-          template "main_ie.css.sass", "app/assets/stylesheets/#{file_name}/#{file_name}_ie.css.sass"
         end
       end
 
