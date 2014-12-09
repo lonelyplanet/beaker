@@ -1,6 +1,8 @@
 # Beaker
 Rails generators for Lonely Planet
 
+![alt tag Beaker](http://i.giphy.com/8dGP6ex3Es45W.gif)
+
 ### Marketing
 
 ```shell

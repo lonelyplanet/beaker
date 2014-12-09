@@ -12,6 +12,13 @@ analytics_config:
   eVar13: "marketing pages : <%= file_name.gsub("_","-") %>"
   eVar47: "<%= file_name.gsub("_"," ").capitalize %>"
 
+#TODO change/delete (custom google event tracking)
+google_event_tracking:
+  - "_trackEvent"
+  - "newsletter"
+  - "signup"
+  - "<%= file_name.gsub("_","-")%>"
+
 meta:
   title: "<%= file_name.gsub("_"," ").capitalize %>"
   description: "{{TODO - add description}}"
