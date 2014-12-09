@@ -1,27 +1,45 @@
-- content_for(:async_js) {'<%= file_name %>/<%= file_name %>'}
+/- TODO delete if not needed (sets valid_submission = true|false based on http status)
+- if(response.code == "201" || response.code == "409" )
+  - valid_submission = true
+- else
+  - valid_submission = false
+
+- content_for(:async_js) {"<%= file_name %>/<%= file_name %>"}
 - content_for(:stylesheets) do
-  = stylesheet_link_tag '<%= file_name %>/<%= file_name %>' , :media => "all"
-  = stylesheet_link_tag 'validation/validation' , :media => "all"
+  = stylesheet_link_tag "<%= file_name %>/<%= file_name %>" , :media => "all"
+  = stylesheet_link_tag "validation/validation" , :media => "all"
 
 - content_for(:meta) { render "shared/meta", @meta }
 
+/- regular page load tracking
 - content_for(:scripts) do
   - configure_js :tracking, @analytics_config
 
-= form_tag(form_save_path, :method => :post, :class => "form-container", "data-lp-validate" => true) do
-  - @hidden_config_tags.each do |tag|
-    = hidden_field_tag tag[:name], tag[:value]
+/- TODO delete if not needed (google custom event tracking)
+- if @google_event_tracking
+  - content_for :head_js do
+    :javascript
+      window.lp.analytics.googleEventVariables = #{@google_event_tracking};
+      window.lp.analytics.trackValidSubmission = #{valid_submission};
 
-  .input-txt.text-form.col-1
-    = ui_component('forms/text_field', properties: @first_name)
-  .input-txt.text-form.col-2
-    = ui_component('forms/text_field', properties: @last_name)
-  .input-txt.col-1
-    = ui_component('forms/dropdown', properties: @countries.merge({options: @gonzo.regions}))
-  .input-txt.text-form.col-2
-    = ui_component('forms/text_field', properties: @email)
+/- TODO update (initial form logic)
+- if !valid_submission
+  = form_tag(form_save_path, :method => :post, :class => "form-container", "data-lp-validate" => true) do
+    - @hidden_config_tags.each do |tag|
+      = hidden_field_tag tag[:name], tag[:value]
 
-  = ui_component('forms/checkbox_field', properties: @optin)
-  = ui_component('forms/checkbox_field', properties: @terms)
+    .input-txt.text-form.col-1
+      = ui_component("forms/text_field", properties: @first_name)
+    .input-txt.text-form.col-2
+      = ui_component("forms/text_field", properties: @last_name)
+    .input-txt.col-1
+      = ui_component("forms/dropdown", properties: @countries.merge({options: @gonzo.regions}))
+    .input-txt.text-form.col-2
+      = ui_component("forms/text_field", properties: @email)
 
-  = submit_tag "Submit" , class: "btn btn--grey btn--full-width"
+    = ui_component("forms/checkbox_field", properties: @optin)
+    = ui_component("forms/checkbox_field", properties: @terms)
+
+    = submit_tag "Submit" , class: "btn btn--grey btn--full-width"
+- else
+  %h1 "FORM SUBMITTED SUCCESFULLY"
