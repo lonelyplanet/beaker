@@ -51,18 +51,21 @@ optin:
   label: "{{TODO - text for opt in checkbox}}"
 
 first_name:
+  label: "Your first name"
   name: "sailthru[required][first_name]"
   maxlength: 200
   placeholder: "Your first name"
   required: true
 
 last_name:
+  label: "Your last name"
   name: "sailthru[required][surname]"
   maxlength: 200
   placeholder: "Your last name"
   required: true
 
 email:
+  label: "Your email name"
   name: "sailthru[required][email]"
   maxlength: 200
   placeholder: "Your email address"
