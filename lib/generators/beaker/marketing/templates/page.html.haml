@@ -43,3 +43,5 @@
     = submit_tag "Submit" , class: "btn btn--grey btn--full-width"
 - else
   %h1 "FORM SUBMITTED SUCCESFULLY"
+  %p.backlink
+    %a{:href => "/<%= file_name.gsub('_','-') %>?delete_cookie=true"} Go back
