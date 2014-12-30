@@ -27,6 +27,13 @@ module Beaker
         end
       end
 
+      def modify_require_yml
+        config_path = "config/requirejs.yml"
+        requirejs_conf = YAML::load_file(config_path)
+        requirejs_conf['modules'] << { 'name' => "#{file_name}/#{file_name}"}
+        File.open(config_path, 'w') {|f| f.write requirejs_conf.to_yaml }
+      end
+
     end
   end
 end
