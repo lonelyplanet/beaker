@@ -51,7 +51,7 @@ optin:
   label: "{{TODO - text for opt in checkbox}}"
 
 first_name:
-  id: "txt-firstname"
+  id: "firstname"
   label: "Your first name"
   name: "sailthru[required][first_name]"
   maxlength: 200
@@ -59,7 +59,7 @@ first_name:
   required: true
 
 last_name:
-  id: "txt-lastname"
+  id: "lastname"
   label: "Your last name"
   name: "sailthru[required][surname]"
   maxlength: 200
@@ -67,7 +67,7 @@ last_name:
   required: true
 
 email:
-  id: "txt-email"
+  id: "email"
   label: "Your email name"
   name: "sailthru[required][email]"
   maxlength: 200
@@ -76,7 +76,7 @@ email:
   type: "email"
 
 countries:
-  id: "ddl-countries"
+  id: "countries"
   name: "sailthru[required][country]"
   placeholder: "Country"
   class: "country"
