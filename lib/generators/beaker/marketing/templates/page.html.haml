@@ -22,6 +22,11 @@
       window.lp.analytics.googleEventVariables = #{@google_event_tracking};
       window.lp.analytics.trackValidSubmission = #{valid_submission};
 
+/- TODO role=main content area
+%section{role: "main"}
+  %p
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut odio ligula, tincidunt vel urna vel, congue pellentesque magna. Maecenas eget ipsum pharetra, faucibus augue at, accumsan ipsum. Quisque arcu felis, vestibulum nec est a, efficitur hendrerit justo. Nam semper consequat congue. Suspendisse dignissim id mi nec feugiat. Integer eget lobortis est. Sed eget quam sagittis, porttitor sapien nec, mattis nunc. Vestibulum vel orci nisi. Aliquam erat volutpat.
+
 /- TODO update (initial form logic)
 - if !valid_submission
   = form_tag(form_save_path, :method => :post, :class => "form-container", "data-lp-validate" => true) do
