@@ -18,7 +18,7 @@ module Beaker
       end
 
       def create_component
-        template "_index.html.hbs", "ui/templates/components/#{file_name}/_#{file_name}.html.hbs"
+        template "_index.html.hbs", "ui/components/#{file_name}/_#{file_name}.html.hbs"
       end
     end
   end
